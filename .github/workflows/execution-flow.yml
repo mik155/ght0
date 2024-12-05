@@ -80,6 +80,5 @@ jobs:
     if: failure()
     needs: test
     steps:
-      printer:
-        name: "Print me biii"
-        run: echo "Abba ojcze"
+      - name: "Printer"
+      run: echo "Abba ojcze"
