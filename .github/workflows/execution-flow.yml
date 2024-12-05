@@ -81,4 +81,4 @@ jobs:
     needs: test
     steps:
       - name: "Printer"
-      run: echo "Abba ojcze"
+        run: echo "Abba ojcze"
