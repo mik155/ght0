@@ -6,7 +6,7 @@ on:
 
 jobs:
   printer:
-    continue-on-errror: true
+    continue-on-error: true
     strategy:
       matrix:
         print_val: [157, 23, 1412, 1, 2 ,3 ,4 ,5 ,6,7,8]
