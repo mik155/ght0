@@ -78,7 +78,6 @@ jobs:
   report:
     runs-on: ubuntu-latest
     if: failure()
-    needs: test
     steps:
       - name: "Printer"
         run: echo "Abba ojcze"
