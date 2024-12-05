@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.runner}}
     steps:
       - name: fail me
-        if: matrix.print_val = 23
+        if: matrix.print_val == 23
         run: exit 1
       - name: print me
         run: echo ${{ matrix.print_val }}
