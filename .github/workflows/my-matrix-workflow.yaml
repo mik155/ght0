@@ -1,0 +1,16 @@
+name: hello-matrix
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  strategy:
+    matrix:
+      print_val: [157, 23, 1412]
+      runner: [ubuntu-latest, windows-latest]
+  printer:
+    runs-on: {{ matrix.runner}}
+    steps:
+      - name: print me
+        run: echo 'ola'
