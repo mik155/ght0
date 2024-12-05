@@ -16,7 +16,7 @@ jobs:
             runner: ubuntu-latest
         exclude:
           - print_val: 3
-          - runner: windows-latest
+            runner: windows-latest
     runs-on: ${{ matrix.runner}}
     steps:
       - name: fail me
