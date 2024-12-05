@@ -5,11 +5,11 @@ on:
       - main
 
 jobs:
-  strategy:
-    matrix:
-      print_val: [157, 23, 1412]
-      runner: [ubuntu-latest, windows-latest]
   printer:
+    strategy:
+      matrix:
+        print_val: [157, 23, 1412]
+        runner: [ubuntu-latest, windows-latest]
     runs-on: {{ matrix.runner}}
     steps:
       - name: print me
