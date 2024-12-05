@@ -9,8 +9,14 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        print_val: [157, 23, 1412, 1, 2 ,3 ,4 ,5 ,6,7,8]
+        print_val: [1, 2, 3]
         runner: [ubuntu-latest, windows-latest]
+        include:
+          - print_val: 111
+            runner: ubuntu-latest
+        exclude:
+          - print_val: 3
+          - runner: windows-latest
     runs-on: ${{ matrix.runner}}
     steps:
       - name: fail me
