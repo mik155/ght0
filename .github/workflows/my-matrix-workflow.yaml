@@ -10,7 +10,7 @@ jobs:
       matrix:
         print_val: [157, 23, 1412]
         runner: [ubuntu-latest, windows-latest]
-    runs-on: {{ matrix.runner}}
+    runs-on: ${{ matrix.runner}}
     steps:
       - name: print me
         run: echo 'ola'
