@@ -7,7 +7,7 @@ on:
 jobs:
   printer:
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/reusable.yaml
+    uses: .github/workflows/reusable.yaml
     with:
       my_name: Abra kadabra
     secrets:
