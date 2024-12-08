@@ -7,10 +7,9 @@ on:
 jobs:
   printer:
     runs-on: ubuntu-latest
-    steps:
-      - name: Execute reusable printer
-        uses: ./github/workflows/reusable.yaml
-        with:
-          my_name: Abra kadabra
-        secrets:
-          foreign_name: ${{ secrets.foreign_name }}
+    name:  Execute reusable printer
+    uses: ./github/workflows/reusable.yaml
+      with:
+        my_name: Abra kadabra
+      secrets:
+        foreign_name: ${{ secrets.foreign_name }}
