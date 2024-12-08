@@ -26,3 +26,5 @@ jobs:
       - name: Message returner
         id: message-returner
         run: echo "worker-message=Hello boss, its wurking !!!" > $GITHUB_OUTPUT 
+      - name: print form smae job
+        run: echo "FROM SAME JOB: ${{ steps.message_returner.outputs.worker_message }}"
