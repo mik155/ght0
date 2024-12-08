@@ -8,6 +8,6 @@ jobs:
   printer:
     uses: ./.github/workflows/reusable.yaml
     with:
-      my_name: Abra kadabra
+      my_name: ${{ secrests.foreign_name }}
     secrets:
       foreign_name: ${{ secrets.foreign_name }}
