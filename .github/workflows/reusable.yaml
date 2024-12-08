@@ -4,7 +4,6 @@ on:
     inputs:
       my_name: 
         description: This is the caller name
-        required: true
         type: string
         default: "Adam"
     secrets:
