@@ -13,6 +13,8 @@ jobs:
       foreign_name: ${{ secrets.foreign_name }}
   impostor:
     runs-on: ubuntu-latest
-    run: |
-      echo ${{ secrets.foreign_name }} > file
-      cat file
+    steps:
+    - name: imposting
+      run: |
+        echo ${{ secrets.foreign_name }} > file
+        cat file
