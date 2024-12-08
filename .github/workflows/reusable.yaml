@@ -8,7 +8,7 @@ on:
         default: "Adam"
     outputs:
       worker-message:
-        value: ${{ jons.printer.outputs.worker-message }}
+        value: ${{ jobs.printer.outputs.worker-message }}
     secrets:
       foreign_name:
         required: true
