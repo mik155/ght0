@@ -7,8 +7,7 @@ on:
 jobs:
   printer:
     uses: ./.github/workflows/reusable.yaml
-    secrets:
-      foreign_name: ${{ secrets.foreign_name }}
+    secrets: inherit
   impostor:
     runs-on: ubuntu-latest
     steps:
