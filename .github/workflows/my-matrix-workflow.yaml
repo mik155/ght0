@@ -7,8 +7,6 @@ on:
 jobs:
   printer:
     uses: ./.github/workflows/reusable.yaml
-    env:
-      my_name: ${{ secrets.foreign_name }}
     secrets:
       foreign_name: ${{ secrets.foreign_name }}
   impostor:
