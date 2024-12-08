@@ -6,21 +6,11 @@ on:
 
 jobs:
   printer:
-    continue-on-error: true
-    strategy:
-      matrix:
-        print_val: [1, 2, 3]
-        runner: [ubuntu-latest, windows-latest]
-        include:
-          - print_val: 111
-            runner: ubuntu-latest
-        exclude:
-          - print_val: 3
-            runner: windows-latest
-    runs-on: ${{ matrix.runner}}
+    runs-on: ubuntu-latest
     steps:
-      - name: fail me
-        if: matrix.print_val == 157
-        run: exit 1
-      - name: print me
-        run: echo ${{ matrix.print_val }}
+      - name: Execute reusable printer
+        uses: ./github/workflows/reusable.yaml
+        with:
+          my_name: Abra kadabra
+        secrets:
+          foreign_name: ${{ secrets.foreign_name }}

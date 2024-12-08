@@ -1,0 +1,21 @@
+name: Hej Wy !
+on:
+  workflow_call:
+    inputs:
+      my_name: 
+        description: This is the caller name
+        required: true
+        type: string
+        default: "Adam"
+    secrets:
+      foreign_name:
+        required: true
+jobs:
+  printer:
+    name: This is a printer job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print name
+        run: echo ${{ inputs.my_name }}
+      - name: Print foreign name
+        run: echo ${{ secrets.foreign_name }}
