@@ -27,4 +27,5 @@ jobs:
         id: message-returner
         run: echo "worker-message=Hello boss, its wurking !!!" > $GITHUB_OUTPUT 
       - name: print form smae job
-        run: printf "From same job:  %s"  "${{ steps.message-returner.outputs.worker-message }}" 
+        run: | 
+          printf "From same job:  %s"  "${{ steps.message-returner.outputs.worker-message }}" 
