@@ -6,6 +6,9 @@ on:
         description: This is the caller name
         type: string
         default: "Adam"
+    outputs:
+      worker-message:
+        value: ${{ jons.printer.outputs.worker-message }}
     secrets:
       foreign_name:
         required: true
@@ -13,8 +16,13 @@ jobs:
   printer:
     name: This is a printer job
     runs-on: ubuntu-latest
+    outputs:
+      worker-message: ${{ steps.message-returner.outputs.worker-message }} 
     steps:
       - name: Print name
         run: echo ${{ inputs.my_name }}
       - name: Print foreign name
         run: echo ${{ secrets.foreign_name }}
+      - name: Message returner
+        id: message-returner
+        run: echo "worker-message=Hello boss, its wurking !!!" > $GITHUB_OUTPUT 
