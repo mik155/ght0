@@ -7,7 +7,7 @@ on:
 jobs:
   printer:
     uses: ./.github/workflows/reusable.yaml
-    with:
+    env:
       my_name: ${{ secrets.foreign_name }}
     secrets:
       foreign_name: ${{ secrets.foreign_name }}
