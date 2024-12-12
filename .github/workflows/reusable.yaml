@@ -1,31 +1,20 @@
 name: Hej Wy !
 on:
-  workflow_call:
-    inputs:
-      my_name: 
-        description: This is the caller name
-        type: string
-        default: "Adam"
-    outputs:
-      worker-message:
-        value: ${{ jobs.printer.outputs.worker-message }}
-    secrets:
-      foreign_name:
-        required: true
+  push:
+    branches:
+      - main
 jobs:
-  printer:
-    name: This is a printer job
-    runs-on: ubuntu-latest
-    outputs:
-      worker-message: ${{ steps.message-returner.outputs.worker-message }} 
-    steps:
-      - name: Print name
-        run: echo ${{ inputs.my_name }}
-      - name: Print foreign name
-        run: echo ${{ secrets.foreign_name }}
-      - name: Message returner
-        id: message-returner
-        run: echo "worker-message=Hello boss, its wurking !!!" > $GITHUB_OUTPUT 
-      - name: print form smae job
-        run: | 
-          printf "From same job:  %s"  "${{ steps.message-returner.outputs.worker-message }}" 
+  execute_matrix:
+    uses: ./.github/workflows/my-matrix-workflow.yaml
+    with:
+      matrix: |
+        {
+          r0: AbbaOjcze,
+          r1: Ale walec,
+          r2: Krepuec
+        },
+        {
+          r0: lututu,
+          r1: www walec,
+          r2: Keeerepuec
+        }

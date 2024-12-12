@@ -1,23 +1,19 @@
 name: hello-matrix
 on:
-  push:
-    branches:
-      - main
-
+  workflow_dispatch
+    inputs:
+      matrix:
+        type: string
+        required: true
 jobs:
   printer:
-    uses: ./.github/workflows/reusable.yaml
-    secrets: inherit
-  impostor:
-    runs-on: ubuntu-latest
-    steps:
-    - name: imposting
-      run: |
-        echo ${{ secrets.foreign_name }} > file
-        cat file
-  output-reader:
-    runs-on: ubuntu-latest
-    needs: printer
-    steps:
-      - name: echo mate
-        run: echo ${{ needs.printer.outputs.worker-message }}
+    strategy:
+      matrix:
+        ${{ fromJson( inputs.matrix ) }}
+  steps:
+    - name: print r0
+      run: echo ${{ matrix.r0 }}
+    - name: print r1
+      run: echo ${{ matrix.r1 }}
+     - name: print r2
+      run: echo ${{ matrix.r2 }}           
