@@ -7,6 +7,7 @@ on:
         required: true
 jobs:
   printer:
+    r
     strategy:
       matrix:
         ${{ fromJson( inputs.matrix ) }}
@@ -15,5 +16,5 @@ jobs:
       run: echo ${{ matrix.r0 }}
     - name: print r1
       run: echo ${{ matrix.r1 }}
-     - name: print r2
+    - name: print r2
       run: echo ${{ matrix.r2 }}           
