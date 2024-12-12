@@ -7,9 +7,4 @@ jobs:
   execute_matrix:
     uses: ./.github/workflows/my-matrix-workflow.yaml
     with:
-      matrix: |
-        '{[
-        {"r0": "AbbaOjcze", "r1": "Ale walec", "r2": "Krepuec"}, 
-        {"r0": "lututu", "r1": "www walec", "r2": "Keeerepuec"}
-        ]
-        }'
+      matrix: '[{"r0": "AbbaOjcze", "r1": "Ale walec", "r2": "Krepuec"}, {"r0": "lututu", "r1": "www walec", "r2": "Keeerepuec"}]'
