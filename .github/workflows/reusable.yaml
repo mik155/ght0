@@ -9,12 +9,12 @@ jobs:
     with:
       matrix: |
         {
-          r0: AbbaOjcze,
-          r1: Ale walec,
-          r2: Krepuec
+          r0: "AbbaOjcze",
+          r1: "Ale walec",
+          r2: "Krepuec"
         },
         {
-          r0: lututu,
-          r1: www walec,
-          r2: Keeerepuec
+          r0: "lututu",
+          r1: "www walec",
+          r2: "Keeerepuec"
         }
