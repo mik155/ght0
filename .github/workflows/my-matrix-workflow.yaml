@@ -1,6 +1,6 @@
 name: hello-matrix
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       matrix:
         type: string
