@@ -7,7 +7,7 @@ on:
         required: true
 jobs:
   printer:
-    r
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         ${{ fromJson( inputs.matrix ) }}
