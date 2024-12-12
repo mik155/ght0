@@ -9,11 +9,7 @@ jobs:
   printer:
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        r0: ${{ fromJson(inputs.matrix.r0) }}
-        r1: ${{ fromJson(inputs.matrix.r1) }}
-        r2: ${{ fromJson(inputs.matrix.r2) }}
-
+      matrix: ${{ fromJson(inputs.matrix) }}
     steps:
       - name: print r0
         run: echo ${{ matrix.r0 }}
