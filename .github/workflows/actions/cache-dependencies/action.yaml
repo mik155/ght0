@@ -6,9 +6,9 @@ runs:
     - name: Cache dependencies
       id: cache
       uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+      with:
+        path: ~/.npm
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
     - name: Install dependencies
       shell: bash
       run: npm ci
