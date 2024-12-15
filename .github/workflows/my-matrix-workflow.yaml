@@ -12,8 +12,8 @@ jobs:
       matrix: ${{ fromJson(inputs.matrix) }}
     steps:
       - name: print r0
-        run: echo ${{ matrix.r0 }}
+        run: echo ${{ matrix.applications.r0 }}
       - name: print r1
-        run: echo ${{ matrix.r1 }}
+        run: echo ${{ matrix.applications.r1 }}
       - name: print r2
-        run: echo ${{ matrix.r2 }}           
+        run: echo ${{ matrix.applications.r2 }}           
