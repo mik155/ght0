@@ -11,6 +11,8 @@ outputs:
 runs:
   using: 'composite'
   steps:
+    - name: print
+      run: echo ${{  inputs.caching }}
     - name: Cache dependencies
       if: inputs.caching == true 
       id: cache
@@ -18,12 +20,11 @@ runs:
       with:
         path: ~/.npm
         key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit == 'false' || inputs.caching == 'true'
       id: npm-ci
       shell: bash
       run: | 
         npm ci
-        echo "cache= kurwa" >> $GITHUB_OUTPUT
+        echo "cache=kurwa" >> $GITHUB_OUTPUT
         echo $GITHUB_OUTPUT
