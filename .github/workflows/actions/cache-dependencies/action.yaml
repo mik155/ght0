@@ -25,5 +25,5 @@ runs:
       shell: bash
       run: | 
         npm ci
-        echo "cached-used=${{ inputs.caching }}" >> $GITHUB_OUTPUT
+        echo "cached-used= kurwa" >> $GITHUB_OUTPUT
         echo $GITHUB_OUTPUT
