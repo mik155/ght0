@@ -7,7 +7,7 @@ inputs:
     default: 'true'
 outputs:
   cached-used:
-    value: ${{ steps.npn-ci.outputs.cache }}
+    value: ${{ steps.npm-ci.outputs.cache }}
 runs:
   using: 'composite'
   steps:
@@ -28,4 +28,3 @@ runs:
       run: | 
         npm ci
         echo "cache=${{ inputs.caching }}" >> $GITHUB_OUTPUT
-        echo $GITHUB_OUTPUT
