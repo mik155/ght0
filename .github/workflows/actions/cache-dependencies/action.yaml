@@ -7,7 +7,7 @@ inputs:
     default: 'true'
 outputs:
   cached-used:
-    value: ${{ steps.npn-ci.outputs.cached-used }}
+    value: ${{ steps.npn-ci.outputs.cache }}
 runs:
   using: 'composite'
   steps:
@@ -25,5 +25,5 @@ runs:
       shell: bash
       run: | 
         npm ci
-        echo "cached-used= kurwa" >> $GITHUB_OUTPUT
+        echo "cache= kurwa" >> $GITHUB_OUTPUT
         echo $GITHUB_OUTPUT
