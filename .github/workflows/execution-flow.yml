@@ -12,6 +12,8 @@ jobs:
       - name: Cache dependencies using custom action
         id: cache
         uses: ./.github/workflows/actions/cache-dependencies
+        with:
+          caching: false
       - name: See out of composite action
         run: echo "${{ steps.cache.outputs.cached-used }}"  
       - name: Lint code
