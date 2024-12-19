@@ -13,6 +13,7 @@ runs:
   steps:
     - name: print
       run: echo ${{  inputs.caching }}
+      shell: bash
     - name: Cache dependencies
       if: inputs.caching == true 
       id: cache
