@@ -25,5 +25,5 @@ runs:
       shell: bash
       run: | 
         npm ci
-        echo "cached-used=${{ steps.cache.outputs.cache-hite }}" >> $GITHUB_OUTPUT
+        echo "cached-used=${{ steps.cache.outputs.cache-hit }}" >> $GITHUB_OUTPUT
         echo $GITHUB_OUTPUT
