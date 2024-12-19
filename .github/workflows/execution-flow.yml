@@ -13,7 +13,7 @@ jobs:
         id: cache
         uses: ./.github/workflows/actions/cache-dependencies
         with:
-          caching: false
+          caching: true
       - name: See out of composite action
         run: echo "${{ steps.cache.outputs.cached-used }}"  
       - name: Lint code
