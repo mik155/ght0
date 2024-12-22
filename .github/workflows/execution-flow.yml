@@ -68,3 +68,10 @@ jobs:
     steps:
       - name: "Printer"
         run: echo "Abba ojcze"
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Js action
+        uses: ./.github/workflows/actions/deploy-via-js
