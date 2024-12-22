@@ -1,5 +1,12 @@
 name: 'Test js action'
 description: "That's test"
+inputs:
+  bucket:
+    required: true
+  region:
+    default: 'us-west'
+  folder:
+    required: true
 runs:
   using: 'node16'
   main: 'main.js'
