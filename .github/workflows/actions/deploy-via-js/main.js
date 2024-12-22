@@ -9,6 +9,8 @@ function run() {
 
     core.notice('Hellow form js action !')
     core.notice(`bucket, region, folder: ${bucket}, ${region}, ${folder}`)
+
+    core.setOutput('website-url', "https://github.com")
 }
 
 run();

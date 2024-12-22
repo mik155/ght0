@@ -7,6 +7,8 @@ inputs:
     default: 'us-west'
   folder:
     required: true
+outputs:
+  website-url:
 runs:
   using: 'node16'
   main: 'main.js'

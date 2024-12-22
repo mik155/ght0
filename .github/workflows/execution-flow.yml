@@ -74,7 +74,10 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Js action
+        id: jsfun
         uses: ./.github/workflows/actions/deploy-via-js
         with:
           bucket: m-1321-bucket-di
           folder: 'weir-cats'
+      - name: Print output
+        run: echo ${{ steps.jsfun.outputs.website-url }}
