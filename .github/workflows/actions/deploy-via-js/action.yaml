@@ -9,6 +9,7 @@ inputs:
     required: true
 outputs:
   website-url:
+    description: 'web url'
 runs:
   using: 'node16'
   main: 'main.js'
