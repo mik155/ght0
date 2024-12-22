@@ -1,5 +1,5 @@
 name: 'Test js action'
-description: 'That's test'
+description: "That's test"
 runs:
   using: 'node16'
   main: 'main.js'
