@@ -88,4 +88,4 @@ jobs:
       - name: Print output js
         run: echo ${{ steps.jsfun.outputs.website-url }}
       - name: Print output docker
-        run: echo ${{ steps.dockerfun.outputs.website-url }}
+        run: echo ${{ steps.docker-act.outputs.website-url }}
