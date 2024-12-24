@@ -1,7 +1,4 @@
 import os
-import boto3
-import mimetypes
-from botocore.config import Config
 
 
 def run():
