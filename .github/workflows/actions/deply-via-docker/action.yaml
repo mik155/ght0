@@ -1,0 +1,15 @@
+name: 'My first docker action'
+description: 'This action is amazing, the best you could have seen'
+inputs:
+  bucket:
+    required: true
+  region:
+    default: 'us-west'
+  folder:
+    required: true
+outputs:
+  website-url:
+    description: 'web url'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
