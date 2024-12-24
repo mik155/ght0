@@ -79,5 +79,13 @@ jobs:
         with:
           bucket: m-1321-bucket-di
           folder: 'weir-cats'
-      - name: Print output
+      - name: dockerfun
+        id: docker-act
+        uses: ./.github/workflows/actions/deploy-via-docker
+        with:
+          bucket: docker bucket
+          folder: 'holder_mol der'
+      - name: Print output js
         run: echo ${{ steps.jsfun.outputs.website-url }}
+      - name: Print output docker
+        run: echo ${{ steps.dockerfun.outputs.website-url }}
